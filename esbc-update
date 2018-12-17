@@ -9,5 +9,6 @@ sudo cp -p -r esbcoind /usr/local/bin
 sudo cp -p -r esbcoin-cli /usr/local/bin
 esbcoind -daemon
 sleep 10
-evos-cli --version
-evos-cli masternode status
+esbcoin-cli --version
+sleep 2
+esbcoin-cli masternode status
