@@ -11,4 +11,9 @@ esbcoind -daemon
 sleep 10
 esbcoin-cli --version
 sleep 2
-echo -e "Update complited, start your mn in new version(2.0.4.2) wallet please"
+while ! /usr/local/bin/esbcoin-cli masternode status | grep -o "Masternode successfully started";do
+/usr/local/bin/esbcoin-cli stop;
+sleep 2;
+/usr/local/bin/esbcoind -daemon;
+sleep 10;
+done
