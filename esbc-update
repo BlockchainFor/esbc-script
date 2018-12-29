@@ -14,13 +14,19 @@ sudo chmod -R 755 esbcoin-cli
 sudo chmod -R 755 esbcoind
 sudo cp -p -r esbcoind /usr/local/bin
 sudo cp -p -r esbcoin-cli /usr/local/bin
-esbcoind -daemon
+esbcoind -daemon -reindex
+
+echo -e  "
+
+${YELLOW}Wait full syncgronization${NC}
+"
+sleep 60
 
 echo -e  "
 
 ${YELLOW}YOU NEED TO START YOUR MASTERNODE FROM WALLET${NC}
 "
-sleep 30
+sleep 60
 echo -e "
 IF YOU DON'T SEE ${GREEN}"Masternode successfully started"${NC} START NOW
 "
