@@ -40,4 +40,4 @@ sleep 60
 #sleep 2;
 #/usr/local/bin/esbcoind -daemon;
 #sleep 10;
-done
+#done
