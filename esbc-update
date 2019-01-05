@@ -8,7 +8,7 @@ NC='\033[0m'
 esbcoin-cli stop
 rm -rf /usr/local/bin/esbcoin*
 rm -rf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
-rm .esbcoin/mncache.dat .esbcoin/mnpayments.dat .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
+rm -rf .esbcoin/mncache.dat .esbcoin/mnpayments.dat .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
 
 wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.2/esbcoin-cli_ubuntu-16.04-x64.tar.bz2
 tar -xvf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
