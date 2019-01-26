@@ -1,11 +1,11 @@
 #!/bin/bash
-# e-Sport Betting Coin Masternode Setup Script V1 for Ubuntu 16.04 LTS
+# ESBC Masternode Setup Script V1 for linux
 #
 # Script will attempt to autodetect primary public IP address
 # and generate masternode private key unless specified in command line
 #
 # Usage:
-# bash esbcoin.autoinstall.sh
+# bash bash install
 #
 
 #Color codes
@@ -41,21 +41,12 @@ function stop_daemon {
         fi
     fi
 }
-#Function detect_ubuntu
-
- if [[ $(lsb_release -d) == *16.04* ]]; then
-   UBUNTU_VERSION=16
-else
-   echo -e "${RED}You are not running Ubuntu 16.04, Installation is cancelled.${NC}"
-   exit 1
-
-fi
 
 #Process command line parameters
 genkey=$1
 clear
 
-echo -e "${GREEN} ------- e-Sport Betting Coin MASTERNODE INSTALLER v2.1.0--------+
+echo -e "${GREEN} ------- ESBC MASTERNODE INSTALLER v2.1.0--------+
  |+-----------------------------------------------+:|
  |                                                  |::
  |       The installation will install and run      |::
@@ -103,10 +94,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
-sudo apt -y install software-properties-common
-sudo add-apt-repository ppa:bitcoin/bitcoin -y
-sudo apt-get install -y libzmq3-dev build-essential libssl-dev libboost-all-dev libqrencode-dev libminiupnpc-dev libboost-system1.58.0 libboost1.58-all-dev libdb4.8++ libdb4.8 libdb4.8-dev libdb4.8++-dev libevent-pthreads-2.0-5 libevent-dev libminiupnpc-dev   fi
-sudo apt-get -y update
+sudo apt-get -y install wget nano htop jq unzip fail2ban
+sudo service fail2ban restart
 #Network Settings
 echo -e "${GREEN}Installing Network Settings...${NC}"
 {
@@ -170,8 +159,9 @@ fi
 cd ~
 rm -rf /usr/local/bin/esbcoin*
 rm -rf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
-wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.2/esbcoin-cli_ubuntu-16.04-x64.tar.bz2
-tar -xvf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
+rm -rf esbc-daemon-linux*
+wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.7/esbc-daemon-linux-x86_64-static.tar.gz
+tar -xvf esbc-daemon-linux-x86_64-static.tar.gz
 sudo chmod -R 755 esbcoin-cli
 sudo chmod -R 755 esbcoind
 sudo cp -p -r esbcoind /usr/local/bin
