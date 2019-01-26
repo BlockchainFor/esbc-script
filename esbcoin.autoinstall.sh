@@ -17,7 +17,6 @@ NC='\033[0m' # No Color
 #TCP port
 PORT=32322
 RPC=32323
-apt-get -qq install build-essential && apt-get -qq install libtool libevent-pthreads-2.0-5 autotools-dev autoconf automake && apt-get -qq install libssl-dev && apt-get -qq install libboost-all-dev && apt-get -qq install software-properties-common && add-apt-repository -y ppa:bitcoin/bitcoin && apt update && apt-get -qq install libdb4.8-dev && apt-get -qq install libdb4.8++-dev && apt-get -qq install libminiupnpc-dev && apt-get -qq install libqt4-dev libprotobuf-dev protobuf-compiler && apt-get -qq install libqrencode-dev && apt-get -qq install git && apt-get -qq install pkg-config && apt-get -qq install libzmq3-dev
 #Clear keyboard input buffer
 function clear_stdin { while read -r -t 0; do read -r; done; }
 
@@ -190,8 +189,9 @@ fi
 cd ~
 rm -rf /usr/local/bin/esbcoin*
 rm -rf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
-wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.2/esbcoin-cli_ubuntu-16.04-x64.tar.bz2
-tar -xvf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
+rm -rf esbc-daemon-linux*
+wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.7/esbc-daemon-linux-x86_64-static.tar.gz
+tar -xvf esbc-daemon-linux-x86_64-static.tar.gz
 sudo chmod -R 755 esbcoin-cli
 sudo chmod -R 755 esbcoind
 cp -p -r esbcoind /usr/local/bin
