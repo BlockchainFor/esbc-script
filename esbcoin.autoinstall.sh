@@ -1,5 +1,5 @@
 #!/bin/bash
-# e-Sport Betting Coin Masternode Setup Script V1 for Ubuntu 16.04 LTS
+# ESBC Masternode Setup Script V2 for linux
 #
 # Script will attempt to autodetect primary public IP address
 # and generate masternode private key unless specified in command line
@@ -41,21 +41,12 @@ function stop_daemon {
         fi
     fi
 }
-#Function detect_ubuntu
-
- if [[ $(lsb_release -d) == *16.04* ]]; then
-   UBUNTU_VERSION=16
-else
-   echo -e "${RED}You are not running Ubuntu 16.04, Installation is cancelled.${NC}"
-   exit 1
-
-fi
 
 #Process command line parameters
 genkey=$1
 clear
 
-echo -e "${GREEN} ------- e-Sport Betting Coin MASTERNODE INSTALLER v2.0.0--------+
+echo -e "${GREEN} ------- ESBC MASTERNODE INSTALLER v2.0.0--------+
  |                                                  |
  |                                                  |::
  |       The installation will install and run      |::
