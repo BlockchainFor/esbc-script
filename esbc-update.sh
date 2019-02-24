@@ -29,7 +29,7 @@ echo -e "${GREEN} Removing .zip file from your directory ${NC}"
 rm -rf bootstrap.zip 
 echo -e "${GREEN} Starting the Server... ${NC}"
 esbcoind -daemon
-sleep 5
+sleep 10
 esbcoin-cli getinfo
 
 #echo -e  "
