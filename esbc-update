@@ -29,10 +29,12 @@ rm -rf bootstrap.zip
 echo -e "${GREEN} Starting the Server... ${NC}"
 esbcoind -daemon
 esbcoin-cli --version
+sleep 5
+esbcoin-cli getblockcount
 
 echo -e  "
 
-${YELLOW}Wait full syncgronization${NC} use ${GREEN}"esbcoin-cli getblockcount"${NC}
+#${YELLOW}Wait full syncgronization${NC} use ${GREEN}"esbcoin-cli getblockcount"${NC}
 "
 sleep 60
 
