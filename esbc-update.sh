@@ -6,7 +6,8 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 esbcoin-cli stop
-
+echo -e "${GREEN} Stopping ESBC wallet   ${NC}"
+sleep 10
 rm -rf /usr/local/bin/esbcoin*
 rm -rf esbc-daemon-linux-x86_64*
 rm -rf .esbcoin/mncache.dat .esbcoin/mnpayments.dat .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
