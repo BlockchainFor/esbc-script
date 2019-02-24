@@ -21,7 +21,7 @@ sleep 5s
 wget http://files.esbproject.online/bootstrap.zip
 sleep 2s
 sudo apt-get install unzip
-unzip bootstrap.zip -d .esbcoin
+unzip -u bootstrap.zip -d .esbcoin
 echo -e "${GREEN} Files succesfully installed! ${NC}"
 sleep 1s
 echo -e "${GREEN} Removing .zip file from your directory ${NC}"
