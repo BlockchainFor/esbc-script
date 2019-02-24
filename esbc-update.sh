@@ -6,6 +6,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 esbcoin-cli stop
+
 rm -rf /usr/local/bin/esbcoin*
 rm -rf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
 rm -rf .esbcoin/mncache.dat .esbcoin/mnpayments.dat .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
@@ -28,15 +29,14 @@ echo -e "${GREEN} Removing .zip file from your directory ${NC}"
 rm -rf bootstrap.zip 
 echo -e "${GREEN} Starting the Server... ${NC}"
 esbcoind -daemon
-esbcoin-cli --version
 sleep 5
-esbcoin-cli getblockcount
+esbcoin-cli getinfo
 
-echo -e  "
+#echo -e  "
 
 #${YELLOW}Wait full syncgronization${NC} use ${GREEN}"esbcoin-cli getblockcount"${NC}
-"
-sleep 60
+#"
+#sleep 60
 
 #echo -e  "
 
