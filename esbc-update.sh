@@ -8,7 +8,7 @@ NC='\033[0m'
 esbcoin-cli stop
 
 rm -rf /usr/local/bin/esbcoin*
-rm -rf esbcoin-cli_ubuntu-16.04-x64.tar.bz2
+rm -rf esbc-daemon-linux-x86_64*
 rm -rf .esbcoin/mncache.dat .esbcoin/mnpayments.dat .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
 
 wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.14/esbc-daemon-linux-x86_64-static.tar.gz
@@ -31,12 +31,6 @@ echo -e "${GREEN} Starting the Server... ${NC}"
 esbcoind -daemon
 sleep 10
 esbcoin-cli getinfo
-
-#echo -e  "
-
-#${YELLOW}Wait full syncgronization${NC} use ${GREEN}"esbcoin-cli getblockcount"${NC}
-#"
-#sleep 60
 
 #echo -e  "
 
