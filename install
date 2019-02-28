@@ -228,9 +228,6 @@ fi
 if [[ $DOSETUP =~ "y" ]] ; then
       echo -e "${GREEN}I will install bootstrap, will stop Server soon ... ${NC}"
 	  sleep 1s
-	  echo -e "${GREEN}Stopping Server and preparing installation... ${NC}"
-	  esbcoin-cli stop
-	  sleep 2s
 	  rm -rf .esbcoin/blocks .esbcoin/chainstate
       echo -e "${GREEN} Removing the current blockchain data... ${NC}"
       sleep 2s
