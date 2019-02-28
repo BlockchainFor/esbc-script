@@ -189,25 +189,17 @@ EOF
     chmod 755 -R ~/.esbcoin/esbcoin.conf
 
     #Starting daemon first time just to generate masternode private key
-    esbcoind -daemon
-echo -ne '[##                 ] (15%)\r'
-sleep 6
-echo -ne '[######             ] (30%)\r'
-sleep 6
-echo -ne '[########           ] (45%)\r'
-sleep 6
-echo -ne '[##############     ] (72%)\r'
-sleep 6
-echo -ne '[###################] (100%)\r'
-echo -ne '\n'
-
-    #Generate masternode private key
+esbcoind -daemon
+sleep 7
+while true;do
     echo -e "${YELLOW}Generating masternode private key...${NC}"
     genkey=$(esbcoin-cli masternode genkey)
-    if [ -z "$genkey" ]; then
-        echo -e "${RED}ERROR: Can not generate masternode private key.${NC} \a"
-        echo -e "${RED}ERROR: Reboot VPS and try again or supply existing genkey as a parameter.${NC}"
-        exit 1
+    if [ "$genkey" ]; then
+        echo  $genkey
+        break
+    fi
+sleep 7
+done
     fi
     
     #Stopping daemon to create esbcoin.conf
