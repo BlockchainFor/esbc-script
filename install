@@ -54,7 +54,7 @@ echo -e "${GREEN} ------- ESBC MASTERNODE INSTALLER v2.1.0--------+
  |                                                  |::
  +------------------------------------------------+::
    ::::::::::::::::::::::::::::::::::::::::::::::::::S${NC}"
-echo "Do you want me to generate a masternode private key for you?[y/n]"
+echo "Do you want me to generate new masternode private key for you?[y/n]"
 read DOSETUP
 
 if [[ $DOSETUP =~ "n" ]] ; then
@@ -221,7 +221,43 @@ masternodeaddr=$publicip
 masternodeprivkey=$genkey
  
 EOF
+#Bootstrap Installation 
+echo "Do you want me to install Bootstrap?[y/n]"
+read DOSETUP
 
+if [[ $DOSETUP =~ "n" ]] ; then
+      echo -e "${GREEN}Bootstrap Installation is aborted... ${NC}"
+fi
+
+if [[ $DOSETUP =~ "y" ]] ; then
+      echo -e "${GREEN}I will install bootstrap, will stop Server soon ... ${NC}"
+	  sleep 1s
+	  echo -e "${GREEN}Stopping Server and preparing installation... ${NC}"
+	  esbcoin-cli stop
+	  sleep 2s
+	  rm -rf .esbcoin/blocks .esbcoin/chainstate
+      echo -e "${GREEN} Removing the current blockchain data... ${NC}"
+      sleep 2s
+      echo -e "${GREEN} I will start downloading the blockchain files in 5 seconds... ${NC}"
+      sleep 5s
+	  wget http://files.esbproject.online/bootstrap.zip
+	  sleep 2s
+	  echo -e "${GREEN} Now i will install the actual blockchain data! ${NC}"
+	  sleep 1s
+	  sudo apt-get install unzip
+	  unzip bootstrap.zip -d .esbcoin
+	  echo -e "${GREEN} Files succesfully installed! ${NC}"
+	  sleep 1s
+      echo -e "${GREEN} Removing .zip file from your directory ${NC}"
+	  rm -rf bootstrap.zip 
+	  echo -e "${GREEN} Starting the Server... ${NC}"
+	  sleep 1s
+	  echo -e "${GREEN} For installing updates or bootstrap in future, use bash esbc-autoupdate.sh  ${NC}"
+else
+      echo -e "${YELLOW}Bootstrap Installation has failed... ${NC}"
+	  sleep 2
+	  echo -e "${GREEN} For installing updates or bootstrap in future, use bash esbc-autoupdate.sh  ${NC}"
+fi
 #Finally, starting daemon with new esbcoin.conf
 esbcoind -daemon
 sleep 5
