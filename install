@@ -202,7 +202,6 @@ done
     #Stopping daemon to create esbcoin.conf
     esbcoin-cli stop
     sleep .5
-fi
 # Create esbcoin.conf
 cat <<EOF > ~/.esbcoin/esbcoin.conf
 rpcuser=$rpcuser
