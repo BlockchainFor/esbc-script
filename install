@@ -1,12 +1,9 @@
 #!/bin/bash
 # ESBC Masternode Setup Script V1 for linux
-#
 # Script will attempt to autodetect primary public IP address
 # and generate masternode private key unless specified in command line
-#
 # Usage:
-# bash bash install
-#
+# bash install
 
 #Color codes
 RED='\033[0;91m'
