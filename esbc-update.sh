@@ -32,21 +32,3 @@ echo -e "${GREEN} Starting the Server... ${NC}"
 esbcoind -daemon
 sleep 10
 esbcoin-cli getinfo
-
-#echo -e  "
-
-#${YELLOW}YOU NEED TO START YOUR MASTERNODE FROM WALLET${NC}
-#"
-#sleep 60
-#echo -e "
-#IF YOU DON'T SEE ${GREEN}"Masternode successfully started"${NC} START NOW
-#"
-#sleep 30
-#esbcoin-cli --version
-#sleep 2
-#while ! /usr/local/bin/esbcoin-cli masternode status | grep -o "Masternode successfully started";do
-#/usr/local/bin/esbcoin-cli stop;
-#sleep 2;
-#/usr/local/bin/esbcoind -daemon;
-#sleep 10;
-#done
