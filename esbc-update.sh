@@ -12,7 +12,7 @@ rm -rf /usr/local/bin/esbcoin*
 rm -rf esbc-daemon-linux-x86_64*
 rm -rf .esbcoin/mncache.dat .esbcoin/mnpayments.dat .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
 
-wget https://github.com/BlockchainFor/ESBC2/releases/download/2.0.4.14/esbc-daemon-linux-x86_64-static.tar.gz
+wget https://github.com/BlockchainFor/ESBC2/releases/download/2.1.0.1/esbc-daemon-linux-x86_64-static.tar.gz
 tar -xvf esbc-daemon-linux-x86_64-static.tar.gz
 sudo chmod -R 755 esbcoin-cli
 sudo chmod -R 755 esbcoind
