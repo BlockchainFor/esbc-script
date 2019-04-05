@@ -20,7 +20,7 @@ sudo cp -p -r esbcoind /usr/local/bin
 sudo cp -p -r esbcoin-cli /usr/local/bin
 echo -e "${GREEN} I will start downloading the blockchain files in 5 seconds... ${NC}"
 sleep 5s
-wget http://files.esbproject.online/bootstrap.zip
+wget https://files.esbc.pro/bootstrap.zip
 sleep 2s
 sudo apt-get install unzip
 unzip -u bootstrap.zip -d .esbcoin
