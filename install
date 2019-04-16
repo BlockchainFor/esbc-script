@@ -151,7 +151,7 @@ else
         rm /var/swap.img
     fi
 fi
- 
+ rm -rf .esbcoin/peers.dat .esbcoin/blocks .esbcoin/chainstate .esbcoin/database
 #Installing Daemon
 cd ~
 rm -rf /usr/local/bin/esbcoin*
