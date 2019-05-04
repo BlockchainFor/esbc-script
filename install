@@ -215,22 +215,6 @@ externalip=$publicip
 bind=$publicip
 masternodeaddr=$publicip
 masternodeprivkey=$genkey
-addnode=149.28.122.130
-addnode=78.46.165.145
-addnode=116.203.130.23
-addnode=78.24.220.145
-addnode=173.249.9.72
-addnode=104.238.171.55
-addnode=5.9.13.72
-addnode=173.212.215.88
-addnode=217.61.122.148
-addnode=95.216.174.3
-addnode=95.179.228.105
-addnode=92.60.39.194
-addnode=5.189.171.249
-addnode=51.77.93.50
-addnode=80.240.28.88
-addnode=207.180.204.6
  
 EOF
 #Bootstrap Installation 
