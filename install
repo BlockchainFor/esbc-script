@@ -240,7 +240,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
 	  echo -e "${GREEN} Now i will install the actual blockchain data! ${NC}"
 	  sleep 1s
 	  sudo apt-get install unzip
-	  unzip bootstrap.zip -d .esbcoin
+	  unzip bootstrap.zip -duq .esbcoin
 	  echo -e "${GREEN} Files succesfully installed! ${NC}"
 	  sleep 1s
       echo -e "${GREEN} Removing .zip file from your directory ${NC}"
@@ -251,7 +251,7 @@ if [[ $DOSETUP =~ "y" ]] ; then
 else
       echo -e "${YELLOW}Bootstrap Installation has failed... ${NC}"
 	  sleep 2
-	  echo -e "${GREEN} For installing updates or bootstrap in future, use bash esbc-autoupdate.sh  ${NC}"
+	  echo -e "${GREEN} Blockchain files was updated  ${NC}"
 fi
 #Finally, starting daemon with new esbcoin.conf
 esbcoind -daemon
