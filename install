@@ -220,7 +220,7 @@ masternodeprivkey=$genkey
  
 EOF
 #Bootstrap Installation 
-echo "Do you want me to install Bootstrap?[y/n]"
+echo "Do you want me to Download Bootstrap for fast Blockchain??[y/n]"
 read DOSETUP
 
 if [[ $DOSETUP =~ "n" ]] ; then
@@ -260,7 +260,7 @@ printf '#!/bin/bash\nif [ ! -f "~/.esbcoin/esbcoin.pid" ]; then /usr/local/bin/e
 chmod -R 755 esbcoin.sh
 #Setting auto start cron job for esbcoin
 if ! crontab -l | grep "esbcoin.sh"; then
-    (crontab -l ; echo "*/9 * * * * /root/esbcoin.sh")| crontab -
+    (crontab -l ; echo "*/5 * * * * /root/esbcoin.sh")| crontab -
 fi
 echo -e "========================================================================
 ${GREEN}Masternode setup is complete!${NC}
@@ -319,4 +319,3 @@ To monitor system resource utilization and running processes:
                    ${GREEN}htop${NC}
 ========================================================================
 "
-sleep 10
