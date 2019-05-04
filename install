@@ -247,11 +247,9 @@ if [[ $DOSETUP =~ "y" ]] ; then
 	  rm -rf bootstrap.zip 
 	  echo -e "${GREEN} Starting the Server... ${NC}"
 	  sleep 1s
-	  echo -e "${GREEN} For installing updates or bootstrap in future, use bash esbc-autoupdate.sh  ${NC}"
 else
-      echo -e "${YELLOW}Bootstrap Installation has failed... ${NC}"
+      echo -e "${YELLOW}Bootstrap Installation was canceled... ${NC}"
 	  sleep 2
-	  echo -e "${GREEN} Blockchain files was updated  ${NC}"
 fi
 #Finally, starting daemon with new esbcoin.conf
 esbcoind -daemon
