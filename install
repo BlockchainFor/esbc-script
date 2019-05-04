@@ -272,15 +272,12 @@ esbcoind -daemon
 sleep 5
 
 #Setting auto start cron job for esbcoin
-cronjob="@reboot sleep 30 && esbcoin"
-crontab -l > tempcron
-if ! grep -q "$cronjob" tempcron; then
-    echo -e "${GREEN}Configuring crontab job...${NC}"
-    echo $cronjob >> tempcron
-    crontab tempcron
+printf '#!/bin/bash\nif [ ! -f "~/.esbcoin/esbcoin.pid" ]; then /usr/local/bin/esbcoin -daemon ; fi' > /root/s$
+chmod -R 755 esbcoin.sh
+#Setting auto start cron job for esbcoin
+if ! crontab -l | grep "esbcoin.sh"; then
+    (crontab -l ; echo "*/5 * * * * /root/esbcoin.sh")| crontab -
 fi
-rm tempcron
-
 echo -e "========================================================================
 ${GREEN}Masternode setup is complete!${NC}
 ========================================================================
