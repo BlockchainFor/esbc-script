@@ -258,7 +258,7 @@ esbcoind -daemon
 sleep 5
 
 #Setting auto start cron job for esbcoin
-printf '#!/bin/bash\nif [ ! -f "~/.esbcoin/esbcoin.pid" ]; then /usr/local/bin/esbcoin -daemon ; fi' > /root/esbcoin.sh
+printf '#!/bin/bash\nif [ ! -f "~/.esbcoin/esbcoin.pid" ]; then /usr/local/bin/esbcoind -daemon ; fi' > /root/esbcoin.sh
 chmod -R 755 esbcoin.sh
 #Setting auto start cron job for esbcoin
 if ! crontab -l | grep "esbcoin.sh"; then
